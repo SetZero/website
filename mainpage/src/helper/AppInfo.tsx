@@ -9,7 +9,6 @@ interface AppInfoState {
 }
 
 export class AppInfo extends React.Component<AppInfoProps, AppInfoState> {
-    private readonly maxChannelLength = 30;
 
     constructor(props: AppInfoProps) {
         super(props);
@@ -30,7 +29,7 @@ export class AppInfo extends React.Component<AppInfoProps, AppInfoState> {
       }
 
     render() {
-        return (<div className="meta-info">This page has been served by <strong>MagicalRocks</strong> | Pod: <strong>{this.state.podName}</strong> | Node: <strong>{this.state.nodeName}</strong> </div>);
+        return (<div className="meta-info">This page has been served by <strong>MagicalRocks</strong> | Pod: <strong>{this.state.podName}</strong> | Node: <strong>{this.state.nodeName}</strong> | <a href="https://privacy.magical.rocks">Impressum</a> </div>);
     }
 }
 

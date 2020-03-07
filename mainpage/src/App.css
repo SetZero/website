@@ -1,3 +1,12 @@
+a {
+  color: rgb(18, 154, 218);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #243aab;
+}
+
 .App {
   text-align: center;
 }
@@ -22,4 +31,43 @@
 .App-info {
   background: #35373b;
   color: #8f949b;
+}
+
+.projects h2 a:visited {
+  color: #000000;
+}
+
+.projects h2 a:hover {
+  color: #243aab;
+  border-bottom: none;
+}
+
+.projects h2 a {
+  text-decoration: none;
+  border-bottom: 5px #243aab solid;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.projects a {
+  --uiaiElementColorHover: #243aab;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.project-block {
+  min-width: 200px;
+  flex: 1;
+  padding: 10px;
+}
+
+.project-block .text-block{
+  text-align: left;
 }
