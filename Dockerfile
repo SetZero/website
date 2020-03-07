@@ -11,12 +11,15 @@ ENV PATH /mainpage/node_modules/.bin:$PATH
 RUN yarn global add serve@11.3.0
 RUN yarn global add react-scripts@3.4.0
 
-COPY start.sh /
 COPY mainpage/package.json ./package.json
 RUN yarn install
 COPY mainpage/  ./
+RUN yarn run build
+
+COPY start.sh ./start.sh
+RUN chmod +x /mainpage/start.sh
 
 # start app
-CMD ["/start.sh"]
-
-# ENTRYPOINT "yarn --cwd /mainpage run build && "
+#RUN echo "[\"$NODE_NAME\", \"$POD_NAME\"]" > /mainpage/public/metadata.json
+#CMD ["serve", "-s", "/mainpage/build"]
+CMD ["/mainpage/start.sh"]
