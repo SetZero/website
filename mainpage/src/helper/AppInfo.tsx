@@ -23,13 +23,14 @@ export class AppInfo extends React.Component<AppInfoProps, AppInfoState> {
         .then((data) => {
             console.log(data)
             this.setState({
-                podName: data.POD
+                podName: data.POD,
+                nodeName: data.NODE
             });
-        }).catch(e =>  this.setState({ podName: 'UNKNOWN' }));
+        }).catch(e =>  this.setState({ podName: 'UNKNOWN', nodeName: 'UNKNOWN' }));
       }
 
     render() {
-        return (<div>Pod: {this.state.podName}</div>);
+        return (<div className="meta-info">This page has been served by <strong>MagicalRocks</strong> | Pod: <strong>{this.state.podName}</strong> | Node: <strong>{this.state.nodeName}</strong> </div>);
     }
 }
 
