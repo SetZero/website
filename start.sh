@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "[\"$NODE_NAME\", \"$POD_NAME\"]" > /mainpage/build/k8s_data.json
+echo "{\"NODE\": \"$NODE_NAME\", \"POD\": \"$POD_NAME\"}" > /mainpage/build/k8s_data.json
 serve -s /mainpage/build
