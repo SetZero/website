@@ -25,6 +25,4 @@ COPY --from=build /opt/start.sh /opt/start.sh
 EXPOSE 80
 
 # start app
-#RUN echo "[\"$NODE_NAME\", \"$POD_NAME\"]" > /mainpage/public/metadata.json
-#CMD ["serve", "-s", "/mainpage/build"]
 CMD ["/opt/start.sh"]
