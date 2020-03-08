@@ -12,7 +12,7 @@ a:hover {
 }
 
 .App-header {
-  background: url(/bg.JPG) #282c34 fixed;
+  background: url(/bg.webp) #282c34 fixed;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -81,7 +81,7 @@ a:hover {
 }
 
 .image-block img {
-  padding: 40px;
+  padding: 40px 0 40px 0;
   max-width:100%;
   max-height: 200px;
 }

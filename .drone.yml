@@ -3,6 +3,18 @@ type: kubernetes
 name: website
 
 steps:
+- name: build_dev
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags: latest
+    registry: docker.magical.rocks
+    cache_from: docker.magical.rocks/dev-website:latest
+    repo: docker.magical.rocks/dev-website
+    dockerfile: Dev.Dockerfile
 - name: publish_frontend
   image: plugins/docker
   settings:
@@ -13,8 +25,7 @@ steps:
     tags: latest
     cache_from:
       from_secret: docker_full_project_name
-    registry:
-      from_secret: docker_registry
+    registry: docker.magical.rocks
     repo:
       from_secret: docker_repo
     dockerfile: Dockerfile
