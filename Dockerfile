@@ -1,5 +1,5 @@
 # base image
-FROM node:13.8.0-alpine
+FROM node:13.8.0-alpine as build
 
 # set working directory
 WORKDIR /mainpage
@@ -8,7 +8,6 @@ WORKDIR /mainpage
 ENV PATH /mainpage/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-RUN yarn global add serve@11.3.0
 RUN yarn global add react-scripts@3.4.0
 
 COPY mainpage/package.json ./package.json
@@ -16,10 +15,16 @@ RUN yarn install
 COPY mainpage/  ./
 RUN yarn run build
 
-COPY start.sh ./start.sh
-RUN chmod +x /mainpage/start.sh
+COPY start.sh /opt/start.sh
+RUN chmod +x /opt/start.sh
+
+# production environment
+FROM nginx:alpine
+COPY --from=build /mainpage/build /usr/share/nginx/html
+COPY --from=build /opt/start.sh /opt/start.sh
+EXPOSE 80
 
 # start app
 #RUN echo "[\"$NODE_NAME\", \"$POD_NAME\"]" > /mainpage/public/metadata.json
 #CMD ["serve", "-s", "/mainpage/build"]
-CMD ["/mainpage/start.sh"]
+CMD ["/opt/start.sh"]
