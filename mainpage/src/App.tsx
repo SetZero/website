@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1> Welcome to magical.rocks! </h1>
-        <h3> Project Showcase </h3>
+        <h1> Magical Rocks </h1>
+        <h3> Open Source Software Collection </h3>
       </header>
       <main className="projects">
         <ProjectBlock title="Fancy Mumble Web" href="https://mumble.magical.rocks">
