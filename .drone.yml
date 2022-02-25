@@ -23,9 +23,7 @@ steps:
     password:
       from_secret: docker_password
     tags: latest
-    cache_from:
-      from_secret: docker_full_project_name
+    cache_from: docker.magical.rocks/website:latest
     registry: docker.magical.rocks
-    repo:
-      from_secret: docker_repo
+    repo: docker.magical.rocks/website
     dockerfile: Dockerfile

@@ -12,16 +12,35 @@ a:hover {
 }
 
 .App-header {
-  background: url(/bg.webp) #282c34 fixed;
-  background-size: cover;
-  min-height: 100vh;
+  background: url(./assets/crystal.png) #292727 no-repeat center center;
+  background-size: contain;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  text-shadow: #88857d 2px 2px 9px;
-  color: white;
+  font-size: 13vmin;
+  border-left: 25vmin solid #145a94;
+}
+
+.App-header h1 {
+  margin: 0;
+}
+
+.header-text-one {
+  color: #8bb8d6;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-text-two {
+  color: #1b5c59;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .App-link {

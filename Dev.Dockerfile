@@ -1,5 +1,5 @@
 # base image
-FROM node:13.8.0-alpine as build
+FROM node:17.6.0-alpine as build
 
 # set working directory
 WORKDIR /mainpage
