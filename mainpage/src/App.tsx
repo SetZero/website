@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppInfo } from './helper/AppInfo'
 import { ProjectBlock } from './blocks/ProjectBlock'
+import { ParticleDisplay } from './blocks/Particles'
 import { ImageContainer } from './blocks/ImageContainer'
 import './App.css';
 import 'lazysizes';
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <ParticleDisplay />
         <h1 className="header-text-one"> Magical </h1>
         <h1 className="header-text-two"> Rocks </h1>
       </header>
