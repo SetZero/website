@@ -1,0 +1,33 @@
+#root {
+    height: 100%;
+}
+
+.top-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+}
+
+.bottom-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.bottom-bar a {
+    color: #000;
+    text-decoration: none;
+    padding: 0 10px;
+    margin: 0 10px;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bottom-bar a:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}

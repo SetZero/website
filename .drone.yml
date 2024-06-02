@@ -1,0 +1,17 @@
+kind: pipeline
+type: kubernetes
+name: website
+
+steps:
+- name: publish_frontend
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags: latest
+    cache_from: docker.magical.rocks/website:latest
+    registry: docker.magical.rocks
+    repo: docker.magical.rocks/website
+    dockerfile: Dockerfile
